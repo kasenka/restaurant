@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "restaurant_users")
-public class User {
+@Table(name = "restaurant_workers")
+public class Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

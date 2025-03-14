@@ -1,10 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: linear-gradient(135deg, #f5e0c3, #06122e);
+                font-family: Arial, sans-serif;
+            }
+
+            .form-container {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+
+            .form-container h2 {
+                color: #06122e;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+                margin-bottom: 5px;
+                color: #06122e;
+            }
+
+            .form-group input {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+            }
+
+            .form-group input:focus {
+                border-color: #06122e;
+                outline: none;
+            }
+
+            .submit-btn {
+                width: 100%;
+                background-color: #06122e;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            .submit-btn:hover {
+                background-color: #f5e0c3;
+                color: #06122e;
+            }
+
+            .signin {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            .signin a {
+                color: #06122e;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .signin a:hover {
+                text-decoration: underline;
+            }
+        </style>
 </head>
 <body>
-$END$
+
+<div class="form-container">
+    <h2>Register</h2>
+    <form method="post" th:action="@{/register}">
+
+        <div th:if="${error}">
+            <p style="color: #c97575;" th:text="${error}" class="font-semibold"></p>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <div class="form-group">
+            <label for="key">Access key</label>
+            <input type="text" id="key" name="key" required>
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+    <p class="signin">Already have an account? <a href="/login">Sign in!</a></p>
+</div>
+
 </body>
 </html>
