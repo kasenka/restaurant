@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/main.css}">
+  <link rel="stylesheet" th:href="@{/header.css}">
+  <link rel="stylesheet" th:href="@{/footer.css}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>The Lighthouse</title>
+</head>
+<body>
+
+<!-- Шапка (header) -->
+<header th:fragment="header" class="header">
+  <div class="container">
+    <h1 class="logo">The Lighthouse</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a th:href="@{/}" th:classappend="${page == 'home' ? 'active' : ''}">Главная</a></li>
+        <li><a th:href="@{/menu}" th:classappend="${page == 'menu' ? 'active' : ''}">Меню</a></li>
+        <li><a th:href="@{/reservation}" th:classappend="${page == 'reservation' ? 'active' : ''}">Бронь</a></li>
+        <li><a th:href="@{/about}" th:classappend="${page == 'about' ? 'active' : ''}">Об авторе</a></li>
+        <li><a th:href="@{/contact}" th:classappend="${page == 'contact' ? 'active' : ''}">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <p>Работаете с нами?</p>
+      <div class="buttons">
+        <form method="get" th:action="@{/login}">
+          <button type="submit" class="button-up">Войти</button>
+        </form>
+        <form method="get" th:action="@{/register}">
+          <button type="submit" class="button-up">Регистрация</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Основной контент страницы -->
+<main layout:fragment="content"></main>
+
+<!-- Футер -->
+<footer th:fragment="footer" class="footer">
+  <div class="container">
+    <p>&copy; 2025 "The Lighthouse" | Все права защищены</p>
+    <p>Телефон: +7 (900) 123-45-67 | Email: info@The_Lighthouse_restaurant.ru</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* Контейнер хедера */
+header {
+    background-color: #ffffff; /* Белый фон */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Контейнер внутри хедера (центруем содержимое) */
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Отступы по бокам */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+header .logo {
+    font-size: 2rem; /* Размер шрифта */
+    font-weight: 700; /* Жирный шрифт */
+    color: #3b4045; /* Темный текст */
+    margin-right: 20px; /* Отступ справа */
+}
+
+/* Навигация */
+header nav ul {
+    display: flex;
+    gap: 20px; /* Расстояние между элементами */
+    list-style-type: none; /* Убираем маркеры */
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    font-size: 1.2rem; /* Размер шрифта */
+    color: #3b4045; /* Темно-серый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: 500; /* Полужирный шрифт */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+header nav ul li a:hover {
+    color: #06122e; /* Синий цвет при наведении */
+}
+
+/* Блок с кнопками авторизации */
+header .auth-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивание по правому краю */
+}
+
+header .auth-links p {
+    color: #3b4045; /* Темно-серый текст */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+header .buttons {
+    display: flex;
+    gap: 15px; /* Отступ между кнопками */
+}
+
+header .button-up {
+    padding: 1em 1.8em; /* Уменьшаем размеры кнопки */
+    font-size: 10px; /* Уменьшаем размер шрифта */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #06122e;
+    border: none;
+    border-radius: 5px; /* Менее круглые углы */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+header .button-up:hover {
+    background-color: #f5e0c3; /* Светло-бежевый цвет */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    color: #06122e;
+    transform: translateY(-7px);
+}
+
+header .button-up:active {
+    transform: translateY(-1px);
+}
+
+nav a {
+    color: #556B2F; /* Начальный цвет */
+    transition: color 0.3s ease; /* Плавный переход при смене цвета */
+}
+
+nav a:hover {
+    color: #06122e;
+}
+
+nav a.active {
+    color: #06122e; /* Синий цвет для активной ссылки */
+    font-weight: bold; /* Жирный шрифт для активной ссылки */
+}

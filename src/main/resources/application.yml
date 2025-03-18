@@ -12,3 +12,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         show_sql: true          # Для отображения SQL-запросов
         format_sql: true        # Для форматирования SQL-запросов
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false

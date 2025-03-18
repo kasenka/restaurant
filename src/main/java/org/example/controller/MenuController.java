@@ -32,6 +32,7 @@ public class MenuController {
     public String index(Model model, Principal principal){
         List<MenuItem> items = menuRepository.findAll();
         model.addAttribute("items", items);
+        model.addAttribute("page", "menu");
 
         if (principal != null) {
             return "menuWorker";

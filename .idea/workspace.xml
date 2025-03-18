@@ -4,34 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/MenuItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/menuWorkerShow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/create.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/menuShow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/component/RsaKeyProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/component/RsaKeyProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/BadRegisterParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/BadRegisterParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/WorkerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/WorkerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorkerShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuWorkerShow.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
     </list>
@@ -119,20 +113,28 @@
     &quot;Gradle.restaurant [clean].executor&quot;: &quot;Run&quot;,
     &quot;Kotlin script (Beta).build.gradle.kts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dashakosenko/spring-example/restaurant&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/dashakosenko/spring-example/restaurant/src/main/java/org/example/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/images/image" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/images" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/style" />
     </key>
@@ -195,6 +197,14 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="restaurant.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.restaurant [build]" />
@@ -202,6 +212,14 @@
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,7 +229,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741159711885</updated>
+      <workItem from="1742223060008" duration="178000" />
+      <workItem from="1742223685510" duration="21543000" />
     </task>
+    <task id="LOCAL-00001" summary="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
+      <option name="closed" value="true" />
+      <created>1741945826863</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741945826863</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд" />
   </component>
 </project>

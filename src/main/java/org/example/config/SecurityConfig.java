@@ -26,7 +26,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable()) // Отключаем CSRF (если нужно)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register", "/menu").permitAll()
+                        .requestMatchers("/", "/login", "/register", "/menu","/**").permitAll()
                         .anyRequest().authenticated())
 //                .exceptionHandling(eh -> eh
 //                        .accessDeniedPage("/accessDenied"))
