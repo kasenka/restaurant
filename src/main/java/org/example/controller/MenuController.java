@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 @RequestMapping("/menu")
+@SessionAttributes({"items", "page", "categories", "authorize"})
 public class MenuController {
 
     @Autowired
@@ -33,12 +35,31 @@ public class MenuController {
         List<MenuItem> items = menuRepository.findAll();
         model.addAttribute("items", items);
         model.addAttribute("page", "menu");
+        model.addAttribute("categories", items.stream().map(item -> item.getType()).distinct().toList());
 
         if (principal != null) {
-            return "menuWorker";
+            model.addAttribute("authorize", true);
         }
         return "menu";
     }
+
+    @PostMapping("/filter")
+    public String filter(@RequestParam(required = false) String string,
+                         @RequestParam(required = false) String type,
+                         Model model){
+        List<MenuItem> items = menuRepository.findAll();
+
+        if (string != null && !type.equals("all")){
+            items = menuRepository.filterAndSearch(type, string);
+        } else if (string != null) {
+            items = menuRepository.search(string);
+        } else if (!type.equals("all")){
+            items = menuRepository.filterByType(type);
+        }
+        model.addAttribute("items", items);
+        return "menu";
+    }
+
 
     @GetMapping("/create")
     @PreAuthorize("hasRole('WORKER')")

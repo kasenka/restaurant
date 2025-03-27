@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <link rel="stylesheet" th:href="@{/menu.css}">
-    <link rel="stylesheet" th:href="@{/header.css}">
-    <link rel="stylesheet" th:href="@{/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Меню | "The Lighthouse"</title>
@@ -17,6 +17,27 @@
 <th:block th:replace="layout :: header" class="header"></th:block>
 
 <th:block layout:fragment="content">
+    <br>
+    <form action="/menu/filter" method="post" class="filter-form">
+        <label for="string">Поиск:</label>
+        <input type="text" id="string" name="string" placeholder="Я ищу..." >
+
+        <label for="type">Выберите категорию блюда:</label>
+        <select id="type" name="type">
+            <option value="all">Все</option>
+            <option th:each="option : ${categories}" th:value="${option}" th:text="${option}"></option>
+        </select>
+
+        <button type="submit" class="filter-btn">Искать</button>
+    </form>
+    <br>
+    <div th:if="${authorize}">
+        <form method="get" th:action="@{/menu/create}">
+            <button type="submit" class="submit-btn">+  cоздать новую позицию</button>
+        </form>
+    </div>
+    <br>
+
     <table class="menu-table">
         <thead>
         <tr>

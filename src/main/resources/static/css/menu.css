@@ -60,6 +60,75 @@ body {
     color: #4a5568; /* Серый для ингредиентов */
 }
 
+.filter-form {
+    max-width: 1000px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(6, 18, 46, 0.2);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-form label {
+    display: block;
+    font-weight: 600;
+    color: #06122e;
+    margin-bottom: 8px;
+    font-size: 1em;
+    margin-right: 15px;
+}
+
+.filter-form input[type="text"] {
+    width: 200px;
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.filter-form input[type="text"]:focus {
+    border-color: #06122e;
+    outline: none;
+    box-shadow: 0 0 5px rgba(6, 18, 46, 0.3);
+}
+
+.filter-form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+.filter-btn {
+    padding: 12px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #06122e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #f5e0c3;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    color: #06122e;
+}
+
+
 .submit-btn {
     display: block; /* Кнопка становится блочным элементом */
     margin: 0 auto;
