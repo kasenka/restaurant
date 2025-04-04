@@ -3,6 +3,7 @@ package org.example.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -28,8 +29,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable()) // Отключаем CSRF (если нужно)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter", "/css/**").permitAll()
-                        .anyRequest().authenticated())
+//                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter", "/reservation/**",
+//                                "/css/**", "/images/**").permitAll()
+//                        .requestMatchers(HttpMethod.POST, "/reservation").permitAll()
+//                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
 //                .exceptionHandling(eh -> eh
 //                        .accessDeniedPage("/accessDenied"))
                 .formLogin(form -> form

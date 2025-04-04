@@ -76,7 +76,6 @@ public class MenuController {
         if (result.hasErrors()) {
             if (result.hasFieldErrors("price")) {
                 model.addAttribute("priceError", "Цена должна быть положительным числом");
-//                model.addAttribute()
             }
             return "create";
         }
