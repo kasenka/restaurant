@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+  <meta charset="UTF-8">
+  <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <link rel="stylesheet" th:href="@{/css/menu.css}">
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Бронь | "The Lighthouse"</title>
+</head>
+
+<body>
+
+<th:block th:replace="layout :: header" class="header"></th:block>
+
+<th:block layout:fragment="content" >
+  <br>
+  <form action="/reservation/manager/filter" method="post" class="reserv-filter">
+    <div class="form-group">
+      <input type="date" id="date" name="date" placeholder="Выберите дату" required>
+    </div>
+
+    <button type="submit" class="filter-btn">Искать</button>
+  </form>
+  <br>
+  <h2 th:if="${#lists.isEmpty(reservations)}" class="h2">На выбранную дату нет броней</h2>
+
+  <div th:if="${#lists.size(reservations) > 0}">
+    <table class="menu-table" >
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Имя</th>
+        <th>Номер телефона</th>
+        <th>Количество людей</th>
+        <th>Дата</th>
+        <th>Время</th>
+        <th>Комментарий</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="reservation : ${reservations}">
+        <td th:text="${reservation.id}"></td>
+        <td th:text="${reservation.name}"></td>
+        <td th:text="${reservation.phoneNumber}"></td>
+        <td th:text="${reservation.amountOfPeople}"></td>
+        <td th:text="${reservation.date}"></td>
+        <td th:text="${reservation.time}"></td>
+        <td th:text="${reservation.comm}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</th:block>
+
+<th:block th:replace="layout :: footer"  class="footer"></th:block>
+
+</body>
+</html>

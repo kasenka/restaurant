@@ -2,8 +2,11 @@ package org.example.controller;
 
 import org.example.model.Reservation;
 import org.example.repository.ReservationRepository;
+import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +16,19 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/reservation")
+@SessionAttributes("page")
 public class ReservationController {
 
     @Autowired
     private ReservationRepository reservationRepository;
+    @Autowired
+    private WorkerRepository workerRepository;
 
     private List<String> generateTimeSlots(String start, String end, int interval, LocalDate localDate) {
         List<String> timeSlots = new ArrayList<>();
@@ -69,14 +76,38 @@ public class ReservationController {
     }
 
     @GetMapping("")
+    @PreAuthorize("hasRole('MANAGER')")
     public String reservation(Model model, Principal principal){
 
         model.addAttribute("page", "reservation");
-        if(principal != null){
-            return "reservationAdmin";
+
+        if(principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")){
+            List<Reservation> reservations = reservationRepository.findAll()
+                    .stream()
+                    .sorted(Comparator.comparing(Reservation::getDate))
+                    .toList();
+
+            List<Reservation> todayReservations = reservations.stream()
+                    .filter(r -> r.getDate().equals(LocalDate.now())).toList();
+
+            model.addAttribute("reservations", todayReservations);
+            return "reservationManager";
         }
         model.addAttribute("timeSlots", generateTimeSlots("08:00", "22:00", 15, null));
         return "reservation";
+    }
+
+    @PostMapping("/manager/filter")
+    public String filter(@RequestParam String date, Model model, Principal principal){
+        if(principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            List<Reservation> reservations = reservationRepository.findAll()
+                    .stream()
+                    .filter(r -> r.getDate().equals(LocalDate.parse(date)))
+                    .sorted(Comparator.comparing(Reservation::getTime))
+                    .toList();
+            model.addAttribute("reservations", reservations);
+            return "reservationManager";
+        }return "reservation";
     }
 
     @PostMapping("")

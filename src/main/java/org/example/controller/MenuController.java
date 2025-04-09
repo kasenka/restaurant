@@ -37,7 +37,7 @@ public class MenuController {
         model.addAttribute("page", "menu");
         model.addAttribute("categories", items.stream().map(item -> item.getType()).distinct().toList());
 
-        if (principal != null) {
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
             model.addAttribute("authorize", true);
         }
         return "menu";
@@ -62,84 +62,93 @@ public class MenuController {
 
 
     @GetMapping("/create")
-    @PreAuthorize("hasRole('WORKER')")
-    public String createPage(Model model){
-        model.addAttribute("menuItem", new MenuItem());
-        return "create";
+    @PreAuthorize("hasRole('MANAGER')")
+    public String createPage(Model model, Principal principal){
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            model.addAttribute("menuItem", new MenuItem());
+            return "create";
+        }return "menu";
     }
 
     @PostMapping("/create")
-    @PreAuthorize("hasRole('WORKER')")
+    @PreAuthorize("hasRole('MANAGER')")
     public String create(@Valid @ModelAttribute("menuItem") MenuItem menuItem,
-                         BindingResult result, Model model){
-
-        if (result.hasErrors()) {
-            if (result.hasFieldErrors("price")) {
-                model.addAttribute("priceError", "Цена должна быть положительным числом");
+                         BindingResult result, Model model, Principal principal){
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            if (result.hasErrors()) {
+                if (result.hasFieldErrors("price")) {
+                    model.addAttribute("priceError", "Цена должна быть положительным числом");
+                }
+                return "create";
             }
-            return "create";
-        }
-        MenuItem newItem = new MenuItem();
+            MenuItem newItem = new MenuItem();
 
-        newItem.setName(menuItem.getName());
-        newItem.setDescription(menuItem.getDescription());
-        newItem.setType(menuItem.getType());
-        newItem.setIngredients(menuItem.getIngredients());
-        newItem.setPrice(menuItem.getPrice());
+            newItem.setName(menuItem.getName());
+            newItem.setDescription(menuItem.getDescription());
+            newItem.setType(menuItem.getType());
+            newItem.setIngredients(menuItem.getIngredients());
+            newItem.setPrice(menuItem.getPrice());
 
-        menuRepository.save(newItem);
+            menuRepository.save(newItem);
 
-        return "redirect:/menu";
+            return "redirect:/menu";
+        }return "menu";
     }
 
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('WORKER')")
-    public String show(@PathVariable long id, Model model){
+    @PreAuthorize("hasRole('MANAGER')")
+    public String show(@PathVariable long id, Model model, Principal principal){
 
-        MenuItem item = menuRepository.findById(id).get();
-        model.addAttribute("item", item);
-        model.addAttribute("id", id);
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            MenuItem item = menuRepository.findById(id).get();
+            model.addAttribute("item", item);
+            model.addAttribute("id", id);
 
-        return "menuWorkerShow";
+            return "menuManagerShow";
+        }return "menu";
     }
 
     @PostMapping("/{id}/update")
-    @PreAuthorize("hasRole('WORKER')")
+    @PreAuthorize("hasRole('MANAGER')")
     public String update(@PathVariable long id, @Valid @ModelAttribute MenuItem menuItem,
-                         BindingResult result, Model model){
+                         BindingResult result, Model model, Principal principal){
 
-        if (result.hasErrors()) {
-            if (result.hasFieldErrors("price")) {
-                model.addAttribute("priceError", "Цена должна быть положительным числом");
-                model.addAttribute("item", menuItem);
-                model.addAttribute("id", id);
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            if (result.hasErrors()) {
+                if (result.hasFieldErrors("price")) {
+                    model.addAttribute("priceError", "Цена должна быть положительным числом");
+                    model.addAttribute("item", menuItem);
+                    model.addAttribute("id", id);
+                }
+                return "menuManagerShow";
             }
-            return "menuWorkerShow";
-        }
 
-        MenuItem item = menuRepository.findById(id)
-                .orElseThrow(() -> {
-                    return new RuntimeException("Menu item not found with id: " + id);
-                });
+            MenuItem item = menuRepository.findById(id)
+                    .orElseThrow(() -> {
+                        return new RuntimeException("Menu item not found with id: " + id);
+                    });
 
-        item.setName(menuItem.getName());
-        item.setDescription(menuItem.getDescription());
-        item.setType(menuItem.getType());
-        item.setIngredients(menuItem.getIngredients());
-        item.setPrice(menuItem.getPrice());
+            item.setName(menuItem.getName());
+            item.setDescription(menuItem.getDescription());
+            item.setType(menuItem.getType());
+            item.setIngredients(menuItem.getIngredients());
+            item.setPrice(menuItem.getPrice());
 
-        menuRepository.save(item);
+            menuRepository.save(item);
 
-        return "redirect:/menu";
+            return "redirect:/menu";
+        }return "menu";
     }
 
     @PostMapping("/{id}/delete")
-    @PreAuthorize("hasRole('WORKER')")
-    public String delete(@PathVariable long id){
+    @PreAuthorize("hasRole('MANAGER')")
+    public String delete(@PathVariable long id, Principal principal){
 
-        menuRepository.deleteById(id);
+        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+            menuRepository.deleteById(id);
 
-        return "redirect:/menu";
+            return "redirect:/menu";
+        }return "menu";
     }
 }

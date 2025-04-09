@@ -29,13 +29,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable()) // Отключаем CSRF (если нужно)
                 .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter", "/reservation/**",
-//                                "/css/**", "/images/**").permitAll()
-//                        .requestMatchers(HttpMethod.POST, "/reservation").permitAll()
-//                        .anyRequest().authenticated())
-                        .anyRequest().permitAll())
-//                .exceptionHandling(eh -> eh
-//                        .accessDeniedPage("/accessDenied"))
+                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter",
+                                "/css/**", "/images/**").permitAll()
+                        .requestMatchers("/reservation/manager/**").authenticated()
+                        .requestMatchers("/reservation/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/reservation").permitAll()
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/", true)

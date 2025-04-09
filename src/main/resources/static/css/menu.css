@@ -1,8 +1,9 @@
 body {
     font-family: 'Cormorant Garamond', serif;
-    margin: 40px;
+    /*margin: 40px;*/
     background-color: #f0f0f0; /* Светло-бежевый фон */
     color: #06122e; /* Темно-синий текст */
+
 }
 .menu-title {
     text-align: center;
@@ -179,40 +180,23 @@ body {
     text-decoration: underline; /* Убирает подчеркивание */
 }
 
-/*.button-up {*/
-/*    padding: 1em 1.8em; !* Уменьшаем размеры кнопки *!*/
-/*    font-size: 10px; !* Уменьшаем размер шрифта *!*/
-/*    font-weight: 400;*/
-/*    text-transform: uppercase;*/
-/*    letter-spacing: 2px;*/
-/*    font-weight: 500;*/
-/*    color: #fff;*/
-/*    background-color: #06122e;*/
-/*    border: none;*/
-/*    border-radius: 5px; !* Менее круглые углы *!*/
-/*    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);*/
-/*    transition: all 0.3s ease 0s;*/
-/*    cursor: pointer;*/
-/*    outline: none;*/
-/*}*/
+.reserv-filter {
+    max-width: 250px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(6, 18, 46, 0.2);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-
-/*.button-up:hover {*/
-/*    background-color: #f5e0c3; !* Светло-бежевый цвет *!*/
-/*    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);*/
-/*    color: #06122e;*/
-/*    transform: translateY(-7px);*/
-/*}*/
-
-/*.button-up:active {*/
-/*    transform: translateY(-1px);*/
-/*}*/
-
-/*nav a {*/
-/*    color: #556B2F; !* Начальный цвет *!*/
-/*    transition: color 0.3s ease; !* Плавный переход при смене цвета *!*/
-/*}*/
-
-/*nav a:hover {*/
-/*    color: #06122e;*/
-/*}*/
+.h2 {
+    font-size: 56px;   /* Размер шрифта */
+    text-align: center; /* Выравнивание по центру */
+    margin: 20px 0;     /* Отступы сверху и снизу */
+    font-weight: bold;  /* Жирный шрифт */
+}

@@ -50,7 +50,11 @@
         </thead>
         <tbody>
         <tr th:each="item : ${items}">
-            <td th:text="${item.name}"></td>
+            <td th:if="${authorize}">
+                <a th:href="@{/menu/{id}(id=${item.id})}" th:text="${item.name}"></a>
+            </td>
+
+            <td th:unless="${authorize}" th:text="${item.name}"></td>
             <td th:text="${item.description}"></td>
             <td th:text="${item.type}"></td>
             <td class="ingredients-cell" th:text="${item.ingredients}"></td>

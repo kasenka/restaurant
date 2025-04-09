@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- слияние menu.html и menuWorker.html&#10;- фильтрация меню у пользователей и работников">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Reservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/ReservationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/reservation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pexels-ekrulila-11906261.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/sea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reservation.html" afterDir="false" />
+    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reservationManager.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorkerShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuManagerShow.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +221,7 @@
       <workItem from="1742223060008" duration="178000" />
       <workItem from="1742223685510" duration="24649000" />
       <workItem from="1742368790399" duration="11350000" />
-      <workItem from="1742993628471" duration="65914000" />
+      <workItem from="1742993628471" duration="81914000" />
     </task>
     <task id="LOCAL-00001" summary="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
       <option name="closed" value="true" />
@@ -251,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743063796371</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони">
+      <option name="closed" value="true" />
+      <created>1743773499583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743773499583</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +276,7 @@
     <MESSAGE value="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд" />
     <MESSAGE value="- создан шаблон layout.html под хедер и футер&#10;- все стили вынесены в /resources/static/**.css&#10;- добавлено выделение текущей вкладки в заголовке(главная, меню и тд)" />
     <MESSAGE value="- слияние menu.html и menuWorker.html&#10;- фильтрация меню у пользователей и работников" />
-    <option name="LAST_COMMIT_MESSAGE" value="- слияние menu.html и menuWorker.html&#10;- фильтрация меню у пользователей и работников" />
+    <MESSAGE value="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони" />
+    <option name="LAST_COMMIT_MESSAGE" value="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони" />
   </component>
 </project>

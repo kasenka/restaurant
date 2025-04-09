@@ -55,7 +55,7 @@ public class WelcomeController {
         Worker worker = new Worker();
         worker.setUsername(username);
         worker.setEncryptedPassword(passwordEncoder.encode(password));
-        worker.setRole("WORKER");
+        worker.setRole("MANAGER");
 
         workerRepository.save(worker);
         return "redirect:/";
