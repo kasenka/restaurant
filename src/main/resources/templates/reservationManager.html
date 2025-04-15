@@ -20,7 +20,7 @@
   <br>
   <form action="/reservation/manager/filter" method="post" class="reserv-filter">
     <div class="form-group">
-      <input type="date" id="date" name="date" placeholder="Выберите дату" required>
+      <input type="date" id="date" name="date" placeholder="Выберите дату" th:value="${date}" required>
     </div>
 
     <button type="submit" class="filter-btn">Искать</button>

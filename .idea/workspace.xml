@@ -4,18 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reservationManager.html" afterDir="false" />
+    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="фикс ролей">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/3/236af58690aadd00e04386a820adba4cbcdaf163" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33fa326830e75b86df948a2ef241e8554f7c3409" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3437258ef47c03518e400a2022e71e16ae8a959d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/3528fb2681e73a5368aaae8f543839f0ce669c60" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4011c9b57aa1633718d0b627f46206974bb657d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4023f39e2bd57563bd452f1b898a573021a4a9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/432c3153ec200f97fd958aff4556b23f82d391f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b07fbfb22b37ba1d85e582294957c7266e5b909" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4dc5e44e416a5a9a3edde86d87ec2e26844ff965" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/5361714c1414a250422db987feb1e87367385c44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/5452894fa10e55dd89aae6f9d8d5dff88ac76c74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/617847cec7db31344d38db1ce1c58b6c71583c3c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/8110d58317060898ca86db2613c8a3732ee9b677" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/3/236af58690aadd00e04386a820adba4cbcdaf163" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/3/33fa326830e75b86df948a2ef241e8554f7c3409" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/3437258ef47c03518e400a2022e71e16ae8a959d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/5/3528fb2681e73a5368aaae8f543839f0ce669c60" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/0/4011c9b57aa1633718d0b627f46206974bb657d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/0/4023f39e2bd57563bd452f1b898a573021a4a9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/3/432c3153ec200f97fd958aff4556b23f82d391f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/b/4b07fbfb22b37ba1d85e582294957c7266e5b909" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/d/4dc5e44e416a5a9a3edde86d87ec2e26844ff965" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/5361714c1414a250422db987feb1e87367385c44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/4/5452894fa10e55dd89aae6f9d8d5dff88ac76c74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/1/617847cec7db31344d38db1ce1c58b6c71583c3c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/1/8110d58317060898ca86db2613c8a3732ee9b677" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/config/GlobalModelAttributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StatisticController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/statistic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/statisticAdmin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/WorkerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/WorkerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorkerShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuManagerShow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuWorker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reservationManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reservationManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +97,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,10 +138,12 @@
     "Gradle.restaurant [clean].executor": "Run",
     "Kotlin script (Beta).build.gradle.kts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/dashakosenko/spring-example/restaurant",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -221,7 +259,8 @@
       <workItem from="1742223060008" duration="178000" />
       <workItem from="1742223685510" duration="24649000" />
       <workItem from="1742368790399" duration="11350000" />
-      <workItem from="1742993628471" duration="81914000" />
+      <workItem from="1742993628471" duration="96971000" />
+      <workItem from="1744363368592" duration="9576000" />
     </task>
     <task id="LOCAL-00001" summary="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
       <option name="closed" value="true" />
@@ -255,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743773499583</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="фикс ролей">
+      <option name="closed" value="true" />
+      <created>1744220495989</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744220495989</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +324,7 @@
     <MESSAGE value="- создан шаблон layout.html под хедер и футер&#10;- все стили вынесены в /resources/static/**.css&#10;- добавлено выделение текущей вкладки в заголовке(главная, меню и тд)" />
     <MESSAGE value="- слияние menu.html и menuWorker.html&#10;- фильтрация меню у пользователей и работников" />
     <MESSAGE value="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони" />
-    <option name="LAST_COMMIT_MESSAGE" value="- обработка брони со стороны неавторизованного пользователя (модель, репозиторий, контроллер, фронтенд)&#10;- фильтрация дат (следующие 30 дней)&#10;- специальная фильтрация предлагаемого пользователю времени: &#10;1) если выбирается текущий день -&gt; предлагаетя только время большее текущего&#10;2) при каждом выборе новой даты пользователю предлагается новый список времени, он, в свою очередь, проверяется на колличество броней на эту дату. если в на какое-то время уже записано 10 человек, то такое время + 1ч после него, уже не предлагаются пользотелю&#10;- обработка ошибок:&#10;1) &lt; 1 человека (сообщение)&#10;2) &gt; 20 человек (сообщение)&#10;&#10;- всплывающее окно, для уведомления об ошибке/ успешной брони" />
+    <MESSAGE value="фикс ролей" />
+    <option name="LAST_COMMIT_MESSAGE" value="фикс ролей" />
   </component>
 </project>

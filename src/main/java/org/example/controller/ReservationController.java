@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.config.SecurityUtils;
 import org.example.model.Reservation;
 import org.example.repository.ReservationRepository;
 import org.example.repository.WorkerRepository;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+
+import static org.example.config.SecurityUtils.hasRole;
 
 @Controller
 @RequestMapping("/reservation")
@@ -81,7 +84,7 @@ public class ReservationController {
 
         model.addAttribute("page", "reservation");
 
-        if(principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")){
+        if(principal != null && hasRole(principal, "MANAGER")){
             List<Reservation> reservations = reservationRepository.findAll()
                     .stream()
                     .sorted(Comparator.comparing(Reservation::getDate))
@@ -90,6 +93,7 @@ public class ReservationController {
             List<Reservation> todayReservations = reservations.stream()
                     .filter(r -> r.getDate().equals(LocalDate.now())).toList();
 
+            model.addAttribute("date", LocalDate.now());
             model.addAttribute("reservations", todayReservations);
             return "reservationManager";
         }
@@ -99,12 +103,13 @@ public class ReservationController {
 
     @PostMapping("/manager/filter")
     public String filter(@RequestParam String date, Model model, Principal principal){
-        if(principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if(principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             List<Reservation> reservations = reservationRepository.findAll()
                     .stream()
                     .filter(r -> r.getDate().equals(LocalDate.parse(date)))
                     .sorted(Comparator.comparing(Reservation::getTime))
                     .toList();
+            model.addAttribute("date", date);
             model.addAttribute("reservations", reservations);
             return "reservationManager";
         }return "reservation";

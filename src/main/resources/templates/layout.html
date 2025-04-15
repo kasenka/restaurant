@@ -20,6 +20,9 @@
         <li><a th:href="@{/}" th:classappend="${page == 'home' ? 'active' : ''}">Главная</a></li>
         <li><a th:href="@{/menu}" th:classappend="${page == 'menu' ? 'active' : ''}">Меню</a></li>
         <li><a th:href="@{/reservation}" th:classappend="${page == 'reservation' ? 'active' : ''}">Бронь</a></li>
+        <li th:if="${admin}">
+          <a th:href="@{/statistic}" th:classappend="${page == 'statistic' ? 'active' : ''}">Статистика</a>
+        </li>
         <li><a th:href="@{/about}" th:classappend="${page == 'about' ? 'active' : ''}">Об авторе</a></li>
         <li><a th:href="@{/contact}" th:classappend="${page == 'contact' ? 'active' : ''}">Контакты</a></li>
       </ul>

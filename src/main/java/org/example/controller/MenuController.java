@@ -1,10 +1,12 @@
 package org.example.controller;
 
 import jakarta.validation.Valid;
+import org.example.config.SecurityUtils;
 import org.example.model.MenuItem;
 import org.example.repository.MenuItemRepository;
 import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Role;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -37,7 +39,7 @@ public class MenuController {
         model.addAttribute("page", "menu");
         model.addAttribute("categories", items.stream().map(item -> item.getType()).distinct().toList());
 
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             model.addAttribute("authorize", true);
         }
         return "menu";
@@ -64,7 +66,7 @@ public class MenuController {
     @GetMapping("/create")
     @PreAuthorize("hasRole('MANAGER')")
     public String createPage(Model model, Principal principal){
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             model.addAttribute("menuItem", new MenuItem());
             return "create";
         }return "menu";
@@ -74,7 +76,7 @@ public class MenuController {
     @PreAuthorize("hasRole('MANAGER')")
     public String create(@Valid @ModelAttribute("menuItem") MenuItem menuItem,
                          BindingResult result, Model model, Principal principal){
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             if (result.hasErrors()) {
                 if (result.hasFieldErrors("price")) {
                     model.addAttribute("priceError", "Цена должна быть положительным числом");
@@ -100,7 +102,7 @@ public class MenuController {
     @PreAuthorize("hasRole('MANAGER')")
     public String show(@PathVariable long id, Model model, Principal principal){
 
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             MenuItem item = menuRepository.findById(id).get();
             model.addAttribute("item", item);
             model.addAttribute("id", id);
@@ -114,7 +116,7 @@ public class MenuController {
     public String update(@PathVariable long id, @Valid @ModelAttribute MenuItem menuItem,
                          BindingResult result, Model model, Principal principal){
 
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             if (result.hasErrors()) {
                 if (result.hasFieldErrors("price")) {
                     model.addAttribute("priceError", "Цена должна быть положительным числом");
@@ -145,7 +147,7 @@ public class MenuController {
     @PreAuthorize("hasRole('MANAGER')")
     public String delete(@PathVariable long id, Principal principal){
 
-        if (principal != null && workerRepository.findByUsername(principal.getName()).get().getRole().equals("MANAGER")) {
+        if (principal != null && SecurityUtils.hasRole(principal, "MANAGER")) {
             menuRepository.deleteById(id);
 
             return "redirect:/menu";

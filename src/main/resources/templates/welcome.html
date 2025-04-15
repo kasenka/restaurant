@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<th:block th:replace="layout :: header" class="header"></th:block>
+<th:block th:replace="layout :: header" th:with="${admin}" class="header"></th:block>
 
 <th:block layout:fragment="content">
     <section class="relative h-screen" style="background-image: url(''); background-size: cover; background-position: center;">

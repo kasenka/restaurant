@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика | "The Lighthouse"</title>
+    <link rel="stylesheet" th:href="@{/css/statistic.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</head>
+<body>
+<th:block th:replace="layout :: header" th:with="${admin}" class="header"></th:block>
+
+<div class="stats-container">
+    <div class="stat-item">
+        <div class="stat-label">Среднее количество гостей на 1 бронь</div>
+        <div class="stat-value" th:text="${meanGuest}">0</div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-label">Всего броней</div>
+        <div class="stat-value" th:text="${totalReserv}">0</div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-label">Количество менеджеров</div>
+        <div class="stat-value" th:text="${totalManager}">0</div>
+    </div>
+</div>
+<div class="charts-container">
+    <!-- Круговой график -->
+    <div class="chart-wrapper">
+        <h2 class="chart-title">Распределение броней по дням недели</h2>
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- Гистограмма -->
+    <div class="chart-wrapper">
+        <h2 class="chart-title">Распределение броней по времени</h2>
+        <canvas id="timeChart"></canvas>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    // Код для круговой диаграммы
+    const labels = JSON.parse([[${dataLabels}]]);
+    const values = JSON.parse([[${dataValues}]]);
+
+    if (labels && values && labels.length > 0) {
+        const sum = values.reduce((a, b) => a + b, 0);
+        new Chart(
+            document.getElementById('pieChart'),
+            {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        backgroundColor: [
+                            '#f6929e', '#f4b99a', '#f6d78b',
+                            '#ccf37f', '#a3f8ee', '#76a9f6', '#8776f6'
+                        ]
+                    }]
+                },
+                plugins: [ChartDataLabels],
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                let percentage = (value * 100 / sum).toFixed(1) + '%';
+                                return percentage;
+                            },
+                            color: '#333',
+                            font: {
+                                weight: 'bold',
+                                size: 12
+                            },
+                            anchor: 'center',
+                            align: 'center'
+                        },
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 20,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+    } else {
+        document.getElementById('pieChart').innerHTML =
+            '<p style="color:red">Нет данных для отображения</p>';
+    }
+
+    // Код для гистограммы
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            const timeLabels = JSON.parse([[${timeLabels}]]);
+            const timeValues = JSON.parse([[${timeValues}]]);
+
+            const ctx = document.getElementById('timeChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: timeLabels,
+                    datasets: [{
+                        label: 'Количество резерваций',
+                        data: timeValues,
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Количество резерваций'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Временные интервалы'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("Ошибка создания графика:", error);
+            document.getElementById('timeChart').innerHTML =
+                '<p style="color:red">Ошибка загрузки данных для графика</p>';
+        }
+    });
+    /*]]>*/
+</script>
+
+<th:block th:replace="layout :: footer"  class="footer"></th:block>
+
+</body>
+</html>

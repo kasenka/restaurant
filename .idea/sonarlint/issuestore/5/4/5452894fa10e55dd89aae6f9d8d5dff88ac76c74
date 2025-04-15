@@ -1,0 +1,17 @@
+
+“
+java:S3655O"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¼‰àô8ø¿ƒÙ2J$92c36d48-29aa-49a0-89f1-bc3bf22eaa8f
+—
+java:S1192G"ODefine a constant instead of duplicating this literal "redirect:/menu" 3 times.(¹Å´øÿÿÿÿ8ù¿ƒÙ2J$c6c19145-0616-4745-b9db-e5733e49d59e
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ú¿ƒÙ2J$5e0a2ce4-2661-433e-a1ed-b27d179b8ef3
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ú¿ƒÙ2J$498dc550-3d0c-4ba3-b076-55b10a6ea2b4
+›
+java:S1602e"SRemove useless curly braces around statement and then remove useless return keyword(ƒ´æûÿÿÿÿ8ÀƒÙ2J$d5418437-752f-4d09-b33a-ee8ed83ef74d
+‹
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Role'.(“Æ“8•ÀƒÙ2J$fe312b6f-a320-4dcd-af96-750da4ded961
+w
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8•ÀƒÙ2J$fe4f67d5-0450-40d0-a7a9-8f8876edc0df
+ 
+java:S1128"XRemove this unused import 'org.springframework.data.jpa.domain.AbstractPersistable_.id'.(ì€¦ÿÿÿÿÿ8•ÀƒÙ2J$0be03149-f0e4-4da3-807e-9086af1d641c
