@@ -3,7 +3,6 @@
       layout:decorate="~{layout.html}">
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" th:href="@{/css/menu.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
@@ -14,7 +13,7 @@
 
 <body>
 
-<th:block th:replace="layout :: header" th:with="${admin}" class="header"></th:block>
+<th:block th:replace="layout :: header"  class="header"></th:block>
 
 <th:block layout:fragment="content">
     <br>

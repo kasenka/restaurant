@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/contact.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <title>Contact | The Lighthouse</title>
+
+</head>
+<body>
+<th:block th:replace="layout :: header"  class="header"></th:block>
+
+<section class="map-section">
+    <h2 class="map-title">Загляните к нам!</h2>
+    <div class="map-container">
+        <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A220b44b0da9b949a58dd9c0bc9643642725ed47a293582581b255b6bfac6bfd5&amp;source=constructor"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+
+<th:block th:replace="layout :: footer"  class="footer"></th:block>
+
+</body>
+</html>

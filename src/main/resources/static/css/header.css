@@ -1,4 +1,10 @@
 /* Контейнер хедера */
+header,
+header * {
+    font-family: 'Cormorant Garamond';
+    font-size: 1.1rem;
+}
+
 header {
     background-color: #ffffff; /* Белый фон */
     padding: 20px 0; /* Отступы сверху и снизу */
@@ -40,7 +46,7 @@ header nav ul li a {
     font-size: 1.2rem; /* Размер шрифта */
     color: #3b4045; /* Темно-серый цвет текста */
     text-decoration: none; /* Убираем подчеркивание */
-    font-weight: 500; /* Полужирный шрифт */
+    /*font-weight: 500; !* Полужирный шрифт *!*/
     transition: color 0.3s ease; /* Плавное изменение цвета */
 }
 
@@ -63,6 +69,7 @@ header .auth-links p {
 header .buttons {
     display: flex;
     gap: 15px; /* Отступ между кнопками */
+    align-items: center;
 }
 
 header .button-up {

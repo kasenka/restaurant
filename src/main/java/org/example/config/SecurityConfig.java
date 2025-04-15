@@ -29,7 +29,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable()) // Отключаем CSRF (если нужно)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter",
+                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter", "/contact",
                                 "/css/**", "/images/**").permitAll()
                         .requestMatchers("/reservation/manager/**").authenticated()
                         .requestMatchers("/reservation/**").permitAll()
@@ -42,7 +42,7 @@ public class SecurityConfig {
                         .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login?logout")
+                        .logoutSuccessUrl("/")
                         .permitAll())
                 .build();
     }

@@ -18,4 +18,21 @@ public class GlobalModelAttributes {
     public boolean isAdmin(Principal principal) {
         return principal != null && SecurityUtils.hasRole(principal,"ADMIN");
     }
+
+    @ModelAttribute("authorized")
+    public boolean isAuthorized(Principal principal) {
+        return principal != null ;
+    }
+
+    @ModelAttribute("unauthorized")
+    public boolean isUnauthorized(Principal principal) {
+        return principal == null ;
+    }
+
+    @ModelAttribute("name")
+    public String workerName(Principal principal) {
+        if (principal != null) {
+            return principal.getName();
+        }return "";
+    }
 }

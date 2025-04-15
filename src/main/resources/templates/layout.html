@@ -6,6 +6,7 @@
   <link rel="stylesheet" th:href="@{/css/main.css}">
   <link rel="stylesheet" th:href="@{/css/header.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <title>The Lighthouse</title>
 </head>
@@ -24,19 +25,35 @@
           <a th:href="@{/statistic}" th:classappend="${page == 'statistic' ? 'active' : ''}">Статистика</a>
         </li>
         <li><a th:href="@{/about}" th:classappend="${page == 'about' ? 'active' : ''}">Об авторе</a></li>
-        <li><a th:href="@{/contact}" th:classappend="${page == 'contact' ? 'active' : ''}">Контакты</a></li>
+        <li><a th:href="@{/contact}" th:classappend="${page == 'contact' ? 'active' : ''}">Карты</a></li>
       </ul>
     </nav>
+
     <div class="auth-links">
-      <p>Работаете с нами?</p>
-      <div class="buttons">
-        <form method="get" th:action="@{/login}">
-          <button type="submit" class="button-up">Войти</button>
-        </form>
-        <form method="get" th:action="@{/register}">
-          <button type="submit" class="button-up">Регистрация</button>
-        </form>
+      <div th:if="${authorized}">
+        <p>
+          <span th:text="${name}">Имя</span>, Вы вошли как <span th:if="${admin}" th:text="ADMIN"></span>
+                                                           <span th:unless="${admin}" th:text="WORKER"></span>
+        </p>
+        <div class="buttons">
+          <form method="get" th:action="@{/logout}">
+            <button type="submit" class="button-up">Выйти</button>
+          </form>
+        </div>
       </div>
+
+      <div th:if="${unauthorized}">
+        <p>Работаете с нами?</p>
+        <div class="buttons">
+          <form method="get" th:action="@{/login}">
+            <button type="submit" class="button-up">Войти</button>
+          </form>
+          <form method="get" th:action="@{/register}">
+            <button type="submit" class="button-up">Регистрация</button>
+          </form>
+        </div>
+      </div>
+
     </div>
   </div>
 </header>
