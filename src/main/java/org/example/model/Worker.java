@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,4 +30,10 @@ public class Worker {
 
     @NotBlank
     private String role;
+
+    @OneToMany(mappedBy = "supervisorId")
+    private List<Subordination> subordinates;
+
+    @OneToOne(mappedBy = "subordinateId")
+    private Subordination supervisor;
 }

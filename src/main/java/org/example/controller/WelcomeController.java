@@ -3,7 +3,9 @@ package org.example.controller;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.example.exception.BadRegisterParam;
+import org.example.model.Subordination;
 import org.example.model.Worker;
+import org.example.repository.SubordinationRepository;
 import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,11 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class WelcomeController {
 
     private final WorkerRepository workerRepository;
+    private final SubordinationRepository subordinationRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public WelcomeController(WorkerRepository workerRepository, PasswordEncoder passwordEncoder) {
+    public WelcomeController(WorkerRepository workerRepository,
+                             SubordinationRepository subordinationRepository,
+                             PasswordEncoder passwordEncoder) {
         this.workerRepository = workerRepository;
+        this.subordinationRepository = subordinationRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -56,8 +62,13 @@ public class WelcomeController {
         worker.setUsername(username);
         worker.setEncryptedPassword(passwordEncoder.encode(password));
         worker.setRole("MANAGER");
-
         workerRepository.save(worker);
+
+        Subordination subordination = new Subordination();
+        subordination.setSubordinateId(worker);
+        subordination.setSupervisorId(workerRepository.findByUsername("admin2").get());
+        subordinationRepository.save(subordination);
+
         return "redirect:/";
     }
 

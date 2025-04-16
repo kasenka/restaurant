@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 <body>
-<th:block th:replace="layout :: header" th:with="${admin}" class="header"></th:block>
+<th:block th:replace="layout :: header"  class="header"></th:block>
 
 <div class="stats-container">
     <div class="stat-item">
@@ -26,6 +26,11 @@
     <div class="stat-item">
         <div class="stat-label">Количество менеджеров</div>
         <div class="stat-value" th:text="${totalManager}">0</div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-label">Количество менеджеров под Вашим подчинением</div>
+        <div class="stat-value" th:text="${subordination}">0</div>
     </div>
 </div>
 <div class="charts-container">

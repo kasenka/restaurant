@@ -93,6 +93,10 @@ public class StatisticController {
         return workerRepository.findAllByRole("MANAGER").size();
     }
 
+    private int subordination(String username){
+        return workerRepository.findByUsername(username).get().getSubordinates().size();
+    }
+
     @GetMapping("")
     public String statistic(Model model, Principal principal) {
         if (principal != null && SecurityUtils.hasRole(principal, "ADMIN")) {
@@ -119,8 +123,8 @@ public class StatisticController {
                 model.addAttribute("meanGuest", meanGuest());
                 model.addAttribute("totalReserv", totalReserv());
                 model.addAttribute("totalManager", totalManager());
+                model.addAttribute("subordination", subordination(principal.getName()));
 
-                model.addAttribute("admin", true);
                 model.addAttribute("page", "statistic");
 
             } catch (JsonProcessingException e) {
