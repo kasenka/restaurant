@@ -4,13 +4,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.config.SecurityUtils;
 import org.example.model.Reservation;
+import org.example.model.Subordination;
 import org.example.model.Worker;
 import org.example.repository.ReservationRepository;
+import org.example.repository.SubordinationRepository;
 import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
@@ -28,6 +32,9 @@ public class StatisticController {
 
     @Autowired
     private WorkerRepository workerRepository;
+
+    @Autowired
+    private SubordinationRepository subordinationRepository;
 
     @Autowired
     private ReservationRepository reservationRepository;
@@ -134,5 +141,30 @@ public class StatisticController {
             return "statisticAdmin";
         }
         return "welcome";
+    }
+
+    @GetMapping("/managers")
+    public String managers(Model model, Principal principal) {
+        if (principal != null && SecurityUtils.hasRole(principal, "ADMIN")) {
+            List<Worker> subordinations =  subordinationRepository.findAllSubordinationByWorker(
+                            workerRepository.findByUsername(principal.getName()).get());
+//            List<Worker> subordinations = workerRepository.findByUsername(principal.getName()).get()
+//                    .getSubordinates()
+//                    .stream()
+//                    .map(s -> s.getSubordinate())
+//                    .toList();
+
+            model.addAttribute("subordinations", subordinations);
+            return "subordinations";
+        }return "welcome";
+    }
+
+    @PostMapping("/managers/{id}/delete")
+    public String deleteWorker(@PathVariable Long id, Principal principal) {
+        if (principal != null && SecurityUtils.hasRole(principal, "ADMIN")) {
+            workerRepository.deleteById(id);
+
+            return "subordinations";
+        }return "welcome";
     }
 }

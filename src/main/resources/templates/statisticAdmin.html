@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
 <head>
     <meta charset="UTF-8">
     <title>Статистика | "The Lighthouse"</title>
@@ -30,7 +32,7 @@
 
     <div class="stat-item">
         <div class="stat-label">Количество менеджеров под Вашим подчинением</div>
-        <div class="stat-value" th:text="${subordination}">0</div>
+        <a class="stat-value" th:href="@{/statistic/managers}" th:text="${subordination}"></a>
     </div>
 </div>
 <div class="charts-container">

@@ -65,8 +65,8 @@ public class WelcomeController {
         workerRepository.save(worker);
 
         Subordination subordination = new Subordination();
-        subordination.setSubordinateId(worker);
-        subordination.setSupervisorId(workerRepository.findByUsername("admin2").get());
+        subordination.setSubordinate(worker);
+        subordination.setSupervisor(workerRepository.findByUsername("admin2").get());
         subordinationRepository.save(subordination);
 
         return "redirect:/";

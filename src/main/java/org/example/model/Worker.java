@@ -31,9 +31,9 @@ public class Worker {
     @NotBlank
     private String role;
 
-    @OneToMany(mappedBy = "supervisorId")
+    @OneToMany(mappedBy = "supervisor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Subordination> subordinates;
 
-    @OneToOne(mappedBy = "subordinateId")
+    @OneToOne(mappedBy = "subordinate", cascade = CascadeType.ALL, orphanRemoval = true)
     private Subordination supervisor;
 }

@@ -18,9 +18,9 @@ public class Subordination {
 
     @ManyToOne
     @JoinColumn(name = "supervisor_id", nullable = false)
-    private Worker supervisorId;
+    private Worker supervisor;
 
     @OneToOne
     @JoinColumn(name = "subordinate_id", nullable = false)
-    private Worker subordinateId;
+    private Worker subordinate;
 }
