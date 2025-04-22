@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <title>About | "The Lighthouse"</title>
+
+</head>
+<body>
+
+<th:block th:replace="layout :: header"  class="header"></th:block>
+
+<th:block layout:fragment="content">
+    <div class="about-container">
+        <h1 class="about-title">. . .</h1>
+
+        <p class="about-text">
+            Курсовая работа выполнена студенткой <strong>Косенко Дарьей Александровной</strong>,
+            обучающейся в <strong>Финансовом университете при Правительстве РФ</strong>
+            по направлению <strong>"Программная инженерия / Технологии разработки программного обеспечения"</strong>
+            (группа <strong>ТРПО23-4</strong>).
+        </p>
+
+        <p class="about-text">
+            В рамках проекта было разработано веб-приложение с использованием
+            современных технологий разработки.
+        </p>
+
+        <div class="tech-stack">
+            <h3>Использованный стек технологий:</h3>
+            <ul class="tech-list">
+                <li><strong>Backend:</strong> Java, Spring Boot</li>
+                <li><strong>Frontend:</strong> HTML, CSS, Thymeleaf</li>
+                <li><strong>База данных:</strong> PostgreSQL</li>
+            </ul>
+        </div>
+        <div style="display: flex; gap: 50px;">
+            <div class="link-container">
+                <a class="link" href="https://github.com/kasenka">Github</a>
+            </div>
+            <div class="link-container">
+                <a class="link" href="https://t.me/kortiiz">Telegram</a>
+            </div>
+        </div>
+
+    </div>
+
+</th:block>
+
+<th:block th:replace="layout :: footer"  class="footer"></th:block>
+
+</body>
+</html>

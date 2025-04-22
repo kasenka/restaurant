@@ -1,0 +1,60 @@
+.about-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fbeded;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+}
+.about-title {
+    font-size: 1.4rem;
+    color: #06122e;
+    margin-bottom: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+.about-text {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #06122e;
+}
+.tech-stack {
+    margin-top: 1.5rem;
+}
+.tech-stack h3 {
+    margin-bottom: 0.8rem;
+    color: #06122e;
+}
+.tech-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.tech-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.tech-list li:before {
+    content: "-";
+    color: #06122e;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.link-container {
+    width: 40%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f8aaaa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    text-align: center;
+}
+.link{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}

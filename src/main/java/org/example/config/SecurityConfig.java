@@ -29,7 +29,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable()) // Отключаем CSRF (если нужно)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter", "/contact",
+                        .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter",
+                                "/contact", "/about",
                                 "/css/**", "/images/**").permitAll()
                         .requestMatchers("/reservation/manager/**").authenticated()
                         .requestMatchers("/reservation/**").permitAll()
