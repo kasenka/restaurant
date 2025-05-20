@@ -3,6 +3,8 @@ package org.example.config;
 import org.example.model.Worker;
 import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,6 +29,19 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .password(worker.getEncryptedPassword())
                 .roles(worker.getRole())
                 .build();
+    }
+
+    public void reAuthenticateUser(String newUsername) {
+        UserDetails userDetails = loadUserByUsername(newUsername);
+
+        UsernamePasswordAuthenticationToken newAuth =
+                new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        userDetails.getPassword(),
+                        userDetails.getAuthorities()
+                );
+
+        SecurityContextHolder.getContext().setAuthentication(newAuth);
     }
 
 }

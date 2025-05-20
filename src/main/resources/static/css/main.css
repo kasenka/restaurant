@@ -1,54 +1,7 @@
-/*header {*/
-/*    background-color: #2d3748; !* Темный фон *!*/
-/*    color: white; !* Белый текст *!*/
-/*    padding: 1rem 0; !* Отступы сверху и снизу *!*/
-/*}*/
-
-/*header h1 {*/
-/*    font-size: 2rem; !* Размер шрифта *!*/
-/*    font-weight: bold; !* Жирный шрифт *!*/
-/*}*/
-
-/*header nav ul {*/
-/*    display: flex;*/
-/*    gap: 1rem; !* Расстояние между ссылками *!*/
-/*}*/
-
-/*header nav ul li a {*/
-/*    color: white; !* Белый цвет для ссылок *!*/
-/*    font-weight: 500; !* Полужирный шрифт *!*/
-/*}*/
-
-/*header nav ul li a:hover {*/
-/*    color: #3182ce; !* Синий цвет при наведении *!*/
-/*}*/
-
-/*!* Стили для футера *!*/
-/*footer {*/
-/*    background-color: #2d3748; !* Темный фон *!*/
-/*    color: white; !* Белый текст *!*/
-/*    padding: 2rem 0; !* Отступы сверху и снизу *!*/
-/*    text-align: center;*/
-/*}*/
-
-/*footer p {*/
-/*    margin: 0.5rem 0; !* Отступы для текста *!*/
-/*}*/
-
-/*footer .container {*/
-/*    width: 90%;*/
-/*    max-width: 1200px;*/
-/*    margin: 0 auto;*/
-/*}*/
-
-
-
-
-
 
 body {
     font-family: Cormorant Garamond;
-    font-weight: 600;
+    /*font-weight: 600;*/
     font-size: 20px;
 }
 .button-up {
@@ -87,6 +40,34 @@ nav a {
 nav a:hover {
     color: #06122e;
 }
+
+/*.round-button {*/
+/*    !* Основные стили круглой кнопки *!*/
+/*    width: 60px;*/
+/*    height: 60px;*/
+/*    border-radius: 50%;*/
+/*    border: none;*/
+/*    background-color: #f0f0f0; !* Цвет фона кнопки *!*/
+/*    cursor: pointer;*/
+/*    overflow: hidden; !* Обрезаем картинку по кругу *!*/
+/*    padding: 0;*/
+/*    transition: transform 0.2s, box-shadow 0.2s;*/
+/*}*/
+
+/*.round-button:hover {*/
+/*    transform: scale(1.05);*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*}*/
+
+/*.round-button:active {*/
+/*    transform: scale(0.98);*/
+/*}*/
+
+/*.round-button-img {*/
+/*    width: 100%; !* Растягиваем картинку на всю кнопку *!*/
+/*    height: 100%;*/
+/*    object-fit: cover; !* Чтобы картинка не искажалась *!*/
+/*}*/
 
 
 /* menu*/

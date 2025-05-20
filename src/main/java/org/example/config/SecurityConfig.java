@@ -32,7 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/", "/login", "/register", "/menu", "/menu/filter",
                                 "/contact", "/about",
                                 "/css/**", "/images/**").permitAll()
-                        .requestMatchers("/reservation/manager/**").authenticated()
+                        .requestMatchers("/reservation/manager/**", "/profile/**").authenticated()
                         .requestMatchers("/reservation/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/reservation").permitAll()
                         .anyRequest().authenticated())

@@ -28,7 +28,14 @@
             В рамках проекта было разработано веб-приложение с использованием
             современных технологий разработки.
         </p>
+        <br>
+        <p class="about-text">
+            <p><strong>Начало</strong> работы над проектом - 01.03.2025</p>
+            <p><strong>Окончани</strong>е работы над проектом - 20.05.2025</p>
+        </p>
+    </div>
 
+    <div class="about-container">
         <div class="tech-stack">
             <h3>Использованный стек технологий:</h3>
             <ul class="tech-list">
@@ -37,6 +44,38 @@
                 <li><strong>База данных:</strong> PostgreSQL</li>
             </ul>
         </div>
+    </div>
+
+    <div class="about-container">
+        <div class="tech-stack">
+            <h3>Опыт, полученный при разработке проекта:</h3>
+            <ul class="tech-list">
+                <h4>Backend (Java + Spring Boot):</h4>
+                <li>Разработано монолитное приложение на Java и Spring Boot, на базе архитектуры MVC</li>
+                <li>Реализована обработка запросов и форм</li>
+                <li>Model для передачи данных в шаблоны</li>
+                <li>Работа с Spring Security – настройка аутентификации и авторизации</li>
+                <li>Работа с базами данных – подключение PostgreSQL, использование Spring Data JPA (@Entity, @Repository),
+                    написание SQL-запросов</li>
+                <li>Обработка ошибок и проверка данных – настройка @ExceptionHandler</li>
+
+                <h4>Frontend (HTML, CSS, Thymeleaf):</h4>
+                <li>Динамические страницы – использование Thymeleaf (th:text, th:each, th:if) для рендеринга данных из Java</li>
+                <li>Верстка и стилизация – создание адаптивных интерфейсов с HTML/CSS</li>
+                <li>Формы и валидация – передача данных из фронтенда в бэкенд</li>
+                <li>Интеграция с Spring – безопасная подстановка данных через th:value, работа с Model</li>
+                <li>Работы с HTML и CSS для создания адаптивного и визуально привлекательного интерфейса,
+                    включая стилизацию форм и отображение данных</li>
+                <li>Использованы общие шаблоны с помощью th:fragment,
+                    что позволило повторно использовать элементы интерфейса (хедер и футер)</li>
+
+                <h4>База данных (PostgreSQL):</h4>
+                <li>Проектирование схемы БД – создание таблиц, связей</li>
+                <li>Интеграция PostgreSQL со Spring Data JPA для упрощения взаимодействия с базой</li>
+                <li>CRUD-операции (создание, чтение, обновление, удаление) для работы с данными пользователей и других сущностей</li>
+            </ul>
+        </div>
+
         <div style="display: flex; gap: 50px;">
             <div class="link-container">
                 <a class="link" href="https://github.com/kasenka">Github</a>
@@ -45,7 +84,6 @@
                 <a class="link" href="https://t.me/kortiiz">Telegram</a>
             </div>
         </div>
-
     </div>
 
 </th:block>

@@ -33,9 +33,15 @@
       <div th:if="${authorized}">
         <p>
           <span th:text="${name}">Имя</span>, Вы вошли как <span th:if="${admin}" th:text="ADMIN"></span>
-                                                           <span th:unless="${admin}" th:text="WORKER"></span>
+                                                           <span th:unless="${admin}" th:text="MANAGER"></span>
         </p>
         <div class="buttons">
+          <form method="get" th:action="@{/profile}">
+            <button class="round-button">
+              <img th:src="${photo}" alt="Описание" class="round-button-img">
+            </button>
+          </form>
+
           <form method="get" th:action="@{/logout}">
             <button type="submit" class="button-up">Выйти</button>
           </form>

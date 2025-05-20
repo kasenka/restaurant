@@ -7,15 +7,16 @@ header * {
 
 header {
     background-color: #ffffff; /* Белый фон */
-    padding: 20px 0; /* Отступы сверху и снизу */
+    /*padding: 20px 0; !* Отступы сверху и снизу *!*/
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    padding: 0px 40px;
 }
 
 /* Контейнер внутри хедера (центруем содержимое) */
 header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px; /* Отступы по бокам */
+    height: 130px;
+    /*margin: 0 auto;*/
+    /*padding: 0px 40px; !* Отступы по бокам *!*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,11 +106,39 @@ nav a {
     transition: color 0.3s ease; /* Плавный переход при смене цвета */
 }
 
-nav a:hover {
+header nav a:hover {
     color: #06122e;
 }
 
-nav a.active {
+header nav a.active {
     color: #06122e; /* Синий цвет для активной ссылки */
     font-weight: bold; /* Жирный шрифт для активной ссылки */
+}
+
+header .round-button {
+    /* Основные стили круглой кнопки */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0f0f0; /* Цвет фона кнопки */
+    cursor: pointer;
+    overflow: hidden; /* Обрезаем картинку по кругу */
+    padding: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+header .round-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .round-button:active {
+    transform: scale(0.98);
+}
+
+header .round-button-img {
+    width: 100%; /* Растягиваем картинку на всю кнопку */
+    height: 100%;
+    object-fit: cover; /* Чтобы картинка не искажалась */
 }

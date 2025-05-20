@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -23,6 +24,15 @@ public class Worker {
 
     @NotBlank()
     private String username;
+
+    @Column(nullable = true)
+    private String fullName;
+
+    @Column(nullable = true)
+    private LocalDate birthDate;
+
+    @Column(nullable = true)
+    private String photo;
 
     @Column(name = "encrypted_password")
     @NotBlank()

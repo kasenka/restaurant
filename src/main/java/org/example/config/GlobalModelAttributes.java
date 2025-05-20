@@ -1,5 +1,6 @@
 package org.example.config;
 
+import org.example.model.Worker;
 import org.example.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,14 @@ public class GlobalModelAttributes {
     public String workerName(Principal principal) {
         if (principal != null) {
             return principal.getName();
+        }return "";
+    }
+
+    @ModelAttribute("photo")
+    public String photo(Principal principal) {
+        if (principal != null) {
+            Worker w = workerRepository.findByUsername(principal.getName()).get();
+            return (w.getPhoto() == null)? "/images/profile.jpg" : w.getPhoto();
         }return "";
     }
 }

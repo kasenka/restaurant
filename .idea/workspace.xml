@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- добавлена двухуровневая структура данных типа «родитель-дочка»&#10;(работник - подчинение)&#10;- подчинение (ид, начальник, работник)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/subordinations.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/subordinations.html" afterDir="false" />
+    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- об авторе  &quot;/about&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/BadUpdateParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StatisticController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Subordination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Subordination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/GlobalModelAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/GlobalModelAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/SubordinationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/SubordinationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/statisticAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/statisticAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +71,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,34 +104,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.Build restaurant.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.restaurant [:Application.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.restaurant [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.restaurant [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin script (Beta).build.gradle.kts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/dashakosenko/spring-example/restaurant&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/dashakosenko/spring-example/restaurant/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build restaurant.executor": "Run",
+    "Gradle.restaurant [:Application.main()].executor": "Run",
+    "Gradle.restaurant [build].executor": "Run",
+    "Gradle.restaurant [clean].executor": "Run",
+    "Kotlin script (Beta).build.gradle.kts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/dashakosenko/spring-example/restaurant",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/dashakosenko/spring-example/restaurant/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static/images" />
@@ -197,9 +210,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.restaurant [build]" />
-        <item itemvalue="Gradle.restaurant [clean]" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Gradle.restaurant [clean]" />
+        <item itemvalue="Gradle.restaurant [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +237,14 @@
       <workItem from="1742368790399" duration="11350000" />
       <workItem from="1742993628471" duration="96971000" />
       <workItem from="1744363368592" duration="16450000" />
-      <workItem from="1744787410670" duration="12956000" />
+      <workItem from="1744787410670" duration="16410000" />
+      <workItem from="1744884595689" duration="8000" />
+      <workItem from="1744978728928" duration="46582000" />
+      <workItem from="1746363862034" duration="1199000" />
+      <workItem from="1746366190299" duration="1441000" />
+      <workItem from="1746954881413" duration="34000" />
+      <workItem from="1747718961747" duration="513000" />
+      <workItem from="1747719504126" duration="6290000" />
     </task>
     <task id="LOCAL-00001" summary="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
       <option name="closed" value="true" />
@@ -290,7 +310,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744794820286</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- просмотр и удаление сотрудников в подчинении">
+      <option name="closed" value="true" />
+      <created>1744869617795</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744869617796</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- об авторе  &quot;/about&quot;">
+      <option name="closed" value="true" />
+      <created>1745329829803</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745329829803</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +352,19 @@
     <MESSAGE value="-статистика для админа&#10;-другой хедер для админа" />
     <MESSAGE value="-логаут&#10;-приветствие с именем и ролью при авторизации&#10;-/contact (карта)&#10;- мини фикс" />
     <MESSAGE value="- добавлена двухуровневая структура данных типа «родитель-дочка»&#10;(работник - подчинение)&#10;- подчинение (ид, начальник, работник)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- добавлена двухуровневая структура данных типа «родитель-дочка»&#10;(работник - подчинение)&#10;- подчинение (ид, начальник, работник)" />
+    <MESSAGE value="- просмотр и удаление сотрудников в подчинении" />
+    <MESSAGE value="- об авторе  &quot;/about&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- об авторе  &quot;/about&quot;" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="fullName" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -17,6 +17,11 @@ public class SecurityUtils {
     }
 
     public static boolean hasRole(Principal principal, String role) {
-        return workerRepository.findByUsername(principal.getName()).get().getRole().equals(role);
+//        return workerRepository.findByUsername(principal.getName()).get().getRole().equals(role);
+        if (principal == null) return false;
+
+        return workerRepository.findByUsername(principal.getName())
+                .map(worker -> role.equals(worker.getRole()))
+                .orElse(false);
     }
 }
