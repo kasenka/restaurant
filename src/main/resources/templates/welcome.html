@@ -15,11 +15,43 @@
 <th:block th:replace="layout :: header" th:with="${admin}" class="header"></th:block>
 
 <th:block layout:fragment="content">
-    <section class="relative h-screen" style="background-image: url(''); background-size: cover; background-position: center;">
+    <section class="relative h-screen" style="background-image: url('images/welcome_the_lighthouse.png'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-center items-center text-white text-center">
             <h2 class="text-4xl font-bold mb-4">Добро пожаловать в "The Lighthouse"</h2>
             <p class="text-lg mb-6" style="font-style: italic;">Из моря на ваш стол</p>
             <a th:href="@{/menu}" class="button-up" style="padding: 1em 1.8em; font-size: 20px;">Посмотреть меню</a>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white text-gray-800 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-semibold mb-6">О ресторане</h3>
+            <p class="text-lg leading-relaxed">
+                "The Lighthouse" — это уютный ресторан, вдохновлённый морскими традициями и свежестью побережья.
+                Мы предлагаем изысканные блюда из рыбы и морепродуктов, приготовленные с заботой и вниманием к деталям.
+                Наше меню отражает гармонию вкусов и сезонных ингредиентов, а атмосфера приглашает вас насладиться
+                тёплым приёмом и видом на воображаемое побережье. Приходите к нам за настоящим вкусом моря!
+            </p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-4xl mb-4">🐟</div>
+                <h4 class="text-xl font-bold mb-2">Свежайшие морепродукты</h4>
+                <p>Мы работаем только с проверенными поставщиками и ежедневно получаем свежую рыбу и дары моря.</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-4">🍷</div>
+                <h4 class="text-xl font-bold mb-2">Винная карта</h4>
+                <p>Подборка белых и игристых вин со всего мира идеально дополняет наши блюда.</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-4">🌅</div>
+                <h4 class="text-xl font-bold mb-2">Атмосфера уюта</h4>
+                <p>Интерьер, вдохновлённый прибрежными пейзажами, создаёт ощущение отдыха и спокойствия.</p>
+            </div>
         </div>
     </section>
 </th:block>

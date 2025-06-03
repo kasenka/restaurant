@@ -29,8 +29,6 @@ public class MenuController {
     @Autowired
     private MenuItemRepository menuRepository;
 
-    @Autowired
-    private WorkerRepository workerRepository;
 
     @GetMapping("")
     public String index(Model model, Principal principal){

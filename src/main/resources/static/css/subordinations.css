@@ -8,6 +8,10 @@ body {
     color: #333;
 }
 
+.flex-grow {
+    flex: 1;
+}
+
 .content {
     max-width: 1000px;
     text-align: center;

@@ -1,10 +1,18 @@
-/* Стили для футера */
+body {
+    flex: 1 0 auto;
+    min-height: 100vh; /* Минимальная высота - весь экран */
+    margin: 0; /* Убираем отступы по умолчанию */
+    display: flex; /* Включаем flexbox */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    position: relative; /* Для абсолютного позиционирования фу    тера */
+}
+
+
 footer {
     background-color: #1a202c; /* Темный фон */
     color: white; /* Белый текст */
     padding: 30px 0; /* Отступы сверху и снизу */
     text-align: center; /* Центрирование текста */
-
 }
 
 footer .container {

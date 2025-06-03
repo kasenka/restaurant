@@ -18,4 +18,9 @@ public interface SubordinationRepository extends JpaRepository<Subordination, Lo
             "FROM Subordination s " +
             "WHERE s.supervisor = :admin")
     List<Worker> findAllSubordinationByWorker (@Param("admin") Worker admin);
+
+    @Query("SELECT s.id  " +
+            "FROM Subordination s " +
+            "WHERE s.supervisor = :admin AND s.subordinate = :manager")
+    Long findSubordinationByManager (@Param("admin") Worker admin,@Param("manager") Worker manager);
 }

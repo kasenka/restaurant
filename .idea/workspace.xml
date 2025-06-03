@@ -4,28 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="- об авторе  &quot;/about&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/BadUpdateParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+    <list default="true" id="3fe1dde9-b20c-40ec-aebb-a160b185c2f7" name="Changes" comment="финальные корректировки">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/welcome_the_lighthouse.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/GlobalModelAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/GlobalModelAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/component/RsaKeyProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/EncodersConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StatisticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StatisticController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Subordination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Subordination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/MenuItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/MenuItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/SubordinationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/SubordinationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/subordinations.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/subordinations.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/pexels-ekrulila-11906261.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/welcome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/welcome1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/welcome1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/welcome1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuManagerShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuManagerShow.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/subordinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/subordinations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +254,10 @@
       <workItem from="1746366190299" duration="1441000" />
       <workItem from="1746954881413" duration="34000" />
       <workItem from="1747718961747" duration="513000" />
-      <workItem from="1747719504126" duration="6290000" />
+      <workItem from="1747719504126" duration="19024000" />
+      <workItem from="1747894601567" duration="675000" />
+      <workItem from="1747912373727" duration="6984000" />
+      <workItem from="1748000908387" duration="59558000" />
     </task>
     <task id="LOCAL-00001" summary="добавлена страница menu:&#10;1)разделение на зарегистрированного(Worker) и незарегистрированного пользователя&#10;2)посмотр menu для нез.пользов.&#10;3)crud menu для Worker (просмотр, создание и обновление с обработкой ошибок, удаление) и тд">
       <option name="closed" value="true" />
@@ -326,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745329829803</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="финальные корректировки">
+      <option name="closed" value="true" />
+      <created>1747728491533</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747728491533</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +375,8 @@
     <MESSAGE value="- добавлена двухуровневая структура данных типа «родитель-дочка»&#10;(работник - подчинение)&#10;- подчинение (ид, начальник, работник)" />
     <MESSAGE value="- просмотр и удаление сотрудников в подчинении" />
     <MESSAGE value="- об авторе  &quot;/about&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- об авторе  &quot;/about&quot;" />
+    <MESSAGE value="финальные корректировки" />
+    <option name="LAST_COMMIT_MESSAGE" value="финальные корректировки" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

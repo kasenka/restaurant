@@ -64,9 +64,15 @@ public class WelcomeController {
         worker.setRole("MANAGER");
         workerRepository.save(worker);
 
+        Worker admin = workerRepository.findByUsername("dasha").get();
+
         Subordination subordination = new Subordination();
         subordination.setSubordinate(worker);
-        subordination.setSupervisor(workerRepository.findByUsername("admin2").get());
+        subordination.setSupervisor(admin);
+
+        admin.getSubordinates().add(subordination);
+        worker.setSupervisor(subordination);
+
         subordinationRepository.save(subordination);
 
         return "redirect:/";

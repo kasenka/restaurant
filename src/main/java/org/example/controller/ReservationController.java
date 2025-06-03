@@ -30,8 +30,7 @@ public class ReservationController {
 
     @Autowired
     private ReservationRepository reservationRepository;
-    @Autowired
-    private WorkerRepository workerRepository;
+
 
     private List<String> generateTimeSlots(String start, String end, int interval, LocalDate localDate) {
         List<String> timeSlots = new ArrayList<>();
@@ -133,7 +132,12 @@ public class ReservationController {
                     " Пожалуйста, позвоните нам для оформления брони.";
             model.addAttribute("message", errorMessage);
             return "reservation";
+        } else if (phoneNumber.contains("_")) {
+            errorMessage = "Введите корректный номер телефона";
+            model.addAttribute("message", errorMessage);
+            return "reservation";
         }
+
 
         Reservation reservation = new Reservation();
 

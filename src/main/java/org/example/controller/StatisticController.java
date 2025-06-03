@@ -148,13 +148,33 @@ public class StatisticController {
         if (principal != null && SecurityUtils.hasRole(principal, "ADMIN")) {
             List<Worker> subordinations =  subordinationRepository.findAllSubordinationByWorker(
                             workerRepository.findByUsername(principal.getName()).get());
-//            List<Worker> subordinations = workerRepository.findByUsername(principal.getName()).get()
-//                    .getSubordinates()
-//                    .stream()
-//                    .map(s -> s.getSubordinate())
-//                    .toList();
 
             model.addAttribute("subordinations", subordinations);
+            return "subordinations";
+        }return "welcome";
+    }
+
+    @PostMapping("/managers/{id}/makeadmin")
+    public String makeAdmin(@PathVariable Long id, Principal principal, Model model) {
+        if (principal != null && SecurityUtils.hasRole(principal, "ADMIN")) {
+            Worker worker = workerRepository.findById(id).get();
+            worker.setRole("ADMIN");
+
+            Worker admin = workerRepository.findByUsername(principal.getName()).get();
+
+            Long subId = subordinationRepository.findSubordinationByManager( admin, worker);
+
+            worker.setSupervisor(null);
+            admin.getSubordinates().removeIf(s -> s.getId().equals(subId));
+
+            subordinationRepository.deleteById(subId);
+
+            List<Worker> subordinations =  subordinationRepository.findAllSubordinationByWorker(
+                    workerRepository.findByUsername(principal.getName()).get());
+
+
+            model.addAttribute("subordinations", subordinations);
+
             return "subordinations";
         }return "welcome";
     }

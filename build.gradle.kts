@@ -16,32 +16,28 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-
-    implementation("org.postgresql:postgresql:42.6.0")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    // 1. Основные Spring Boot стартеры
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-devtools")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.boot:spring-boot-devtools")
 
-    implementation ("jakarta.validation:jakarta.validation-api:3.0.0")
+    // 2. База данных
+    implementation("org.postgresql:postgresql:42.6.0")
 
+    // 3. Безопасность
+    implementation("org.springframework.security:spring-security-oauth2-jose")
+
+    // 4. Jakarta/Java EE спецификации
+    implementation("jakarta.validation:jakarta.validation-api:3.0.0")
     implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 
+    // 5. Lombok
     compileOnly("org.projectlombok:lombok:1.18.28")
     annotationProcessor("org.projectlombok:lombok:1.18.28")
-
-    implementation ("org.springframework.boot:spring-boot-starter-thymeleaf")
-
-
-    implementation ("org.springframework.security:spring-security-oauth2-jose")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-//    implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
-//    testImplementation("org.springframework.security:spring-security-test")
 }
 
 tasks.test {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout.html}">
+      layout:decorate="~{layout.html}"
+      style="height: 100%">
 
 <head>
     <meta charset="UTF-8">
@@ -8,42 +9,54 @@
     <link rel="stylesheet" th:href="@{/css/subordinations.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
+
 </head>
 <body>
 <th:block th:replace="layout :: header"  class="header"></th:block>
+<main class="flex-grow">
+    <th:block layout:fragment="content">
+        <br>
+        <div class="content">
+            <h1>Мои подчиненные</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Юзернейм</th>
+                    <th>Роль</th>
+                    <th>Полное имя</th>
+                    <th>Дата рождения</th>
+                    <th>Сделать Администратором?</th>
+                    <th>Уволить?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sub : ${subordinations}">
+                    <td th:text="${sub.id}"></td>
+                    <td th:text="${sub.username}"></td>
+                    <td th:text="${sub.role}"></td>
+                    <td th:text="${sub.fullName}"></td>
+                    <td th:text="${sub.birthDate}"></td>
+                    <td>
+                        <form th:method="post" th:action="@{/statistic/managers/{id}/makeadmin(id=${sub.id})}">
+                            <button type="submit" class="submit-btn" >да</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:method="post" th:action="@{/statistic/managers/{id}/delete(id=${sub.id})}">
+                            <button type="submit" class="submit-btn" >да</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
 
-<th:block layout:fragment="content">
-    <br>
-    <div class="content">
-        <h1>Мои подчиненные</h1>
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Юзернейм</th>
-                <th>Роль</th>
-                <th>Уволить бедолагу?</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="sub : ${subordinations}">
-                <td th:text="${sub.id}"></td>
-                <td th:text="${sub.username}"></td>
-                <td th:text="${sub.role}"></td>
-                <td>
-                    <form th:method="post" th:action="@{/statistic/managers/{id}/delete(id=${sub.id})}">
-                        <button type="submit" class="submit-btn" >да</button>
-                    </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div th:if="${#lists.isEmpty(subordinations)}" class="no-subordinations">
-            У вас пока нет подчиненных сотрудников
+            <div th:if="${#lists.isEmpty(subordinations)}" class="no-subordinations">
+                У вас пока нет подчиненных сотрудников
+            </div>
         </div>
-    </div>
-</th:block>
+    </th:block>
+</main>
 
 <th:block th:replace="layout :: footer"  class="footer"></th:block>
 </body>
